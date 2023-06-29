@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lpa_2/custom_text.dart';
 
 class MyName extends StatelessWidget {
   const MyName({super.key});
@@ -10,10 +11,7 @@ class MyName extends StatelessWidget {
         color: Color.fromARGB(255, 16, 16, 16),
       ),
       child: const Center(
-        child: Text(
-          'Hi! Rajat',
-          style: TextStyle(fontSize: 20),
-        ),
+        child: StyledText(),
       ),
     );
   }
