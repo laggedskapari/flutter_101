@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'my_name.dart';
 
 void main() {
+  List<Color> colorList = [ Colors.amber, Colors.black87];
   runApp(
-    const MaterialApp(
+     MaterialApp(
       home: Scaffold(
-        body: MyName(),
+        body: MyName(colorList),
       )
     ),
   );

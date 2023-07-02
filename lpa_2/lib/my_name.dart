@@ -2,13 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:lpa_2/custom_text.dart';
 
 class MyName extends StatelessWidget {
-  const MyName({super.key});
+  const MyName(this.colors, {super.key});
+
+  final List<Color> colors;
 
   @override
   Widget build(BuildContext context) {
-    return  Container(
-      decoration: const BoxDecoration(
-        color: Color.fromARGB(255, 16, 16, 16),
+    return Container(
+      decoration: BoxDecoration(
+        gradient: LinearGradient(colors: colors),
       ),
       child: const Center(
         child: StyledText(),
