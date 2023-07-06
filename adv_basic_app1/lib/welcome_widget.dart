@@ -20,7 +20,7 @@ class WelcomeWidget extends StatelessWidget {
           icon: const Icon(Icons.arrow_right_alt),
           label: const Text(
             'Start',
-            style: TextStyle(fontWeight: FontWeight.bold),
+            style: TextStyle(fontFamily: 'JetBrainsMono-Regular', fontWeight: FontWeight.bold),
           ),
         ),
       ],
