@@ -22,13 +22,13 @@ class _QuizState extends State<Quiz> {
   Widget build(BuildContext context) {
     return const MaterialApp(
       home: Scaffold(
-        backgroundColor: Color.fromARGB(255, 40, 40, 43),
+        backgroundColor: Color.fromARGB(255, 16, 16, 16),
         body: Center(
           child: Text(
             'Hello',
             style: TextStyle(
                 fontFamily: 'JetBrains',
-                color: Color.fromARGB(255, 226, 183, 20),
+                color: Color.fromARGB(255, 255, 255, 255),
                 fontSize: 20),
           ),
         ),
