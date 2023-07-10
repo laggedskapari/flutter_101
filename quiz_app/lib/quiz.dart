@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:quiz_app/question_screen.dart';
+import 'package:quiz_app/welcome_screen.dart';
 
 class Quiz extends StatefulWidget {
   const Quiz({super.key});
@@ -20,17 +22,11 @@ class _QuizState extends State<Quiz> {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       home: Scaffold(
-        backgroundColor: Color.fromARGB(255, 16, 16, 16),
+        backgroundColor: const Color.fromARGB(255, 16, 16, 16),
         body: Center(
-          child: Text(
-            'Hello',
-            style: TextStyle(
-                fontFamily: 'JetBrains',
-                color: Color.fromARGB(255, 255, 255, 255),
-                fontSize: 20),
-          ),
+          child: activeScreen == 'Welcome Screen' ? WelcomeScreen(switchScreen) : const QuestionScreen(),
         ),
       ),
     );

@@ -6,15 +6,16 @@ class AnswerButton extends StatelessWidget {
   final void Function() onTap;
   final String option;
 
+  @override
   Widget build(BuildContext context) {
     return OutlinedButton(
       onPressed: onTap,
       style: OutlinedButton.styleFrom(
           padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 10),
           foregroundColor: const Color.fromARGB(255, 255, 220, 129)),
-      child: const Text(
+      child: Text(
         option,
-        style: TextStyle(fontFamily: 'JetBrains', fontSize: 20, fontWeight: FontWeight.bold),
+        style: const TextStyle(fontFamily: 'JetBrains', fontSize: 20, fontWeight: FontWeight.bold),
       ),
     );
   }
