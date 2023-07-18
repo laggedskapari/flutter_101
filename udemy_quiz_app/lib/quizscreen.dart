@@ -24,27 +24,32 @@ class _QuizScreen extends State<QuizScreen> {
   Widget build(BuildContext context) {
     final currentQuestion = questions[currentQuestionIndex];
     return Center(
-      child: Column(
-        children: [
-          Text(
-            currentQuestion.question,
-            style: const TextStyle(
-              fontFamily: 'JetBrainsBold',
-              fontSize: 20,
-              color: Color.fromARGB(255, 255, 210, 119),
+      child: Container(
+        margin: const EdgeInsets.all(80),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Text(
+              currentQuestion.question,
+              style: const TextStyle(
+                fontFamily: 'JetBrainsBold',
+                fontSize: 20,
+                color: Color.fromARGB(255, 255, 210, 119),
+              ),
             ),
-          ),
-          const SizedBox(
-            height: 20,
-          ),
-          ...currentQuestion.getShuffledOptions().map((option) {
-            return AnswerButton(
-                option: option,
-                onTap: () {
-                  answerQuestion();
-                });
-          })
-        ],
+            const SizedBox(
+              height: 20,
+            ),
+            ...currentQuestion.getShuffledOptions().map((option) {
+              return AnswerButton(
+                  option: option,
+                  onTap: () {
+                    answerQuestion();
+                  });
+            })
+          ],
+        ),
       ),
     );
   }
