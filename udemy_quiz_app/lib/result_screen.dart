@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:udemy_quiz_app/model/questions.dart';
+import 'package:udemy_quiz_app/question_summary.dart';
 
 class ResultScreen extends StatelessWidget {
   const ResultScreen({super.key, required this.selectedOptions});
@@ -31,7 +32,7 @@ class ResultScreen extends StatelessWidget {
           const SizedBox(
             height: 20,
           ),
-          const Text('Preview here...!'),
+          QuestionSummary(questionSummaryData: getSummaryData()),
           const SizedBox(
             height: 20,
           ),
