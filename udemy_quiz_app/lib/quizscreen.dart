@@ -3,7 +3,9 @@ import 'package:udemy_quiz_app/model/questions.dart';
 import 'package:udemy_quiz_app/answer_button.dart';
 
 class QuizScreen extends StatefulWidget {
-  const QuizScreen({super.key});
+  const QuizScreen({super.key, required this.onSelectOption});
+
+  final void Function(String option) onSelectOption;
 
   @override
   State<QuizScreen> createState() {
@@ -14,7 +16,8 @@ class QuizScreen extends StatefulWidget {
 class _QuizScreen extends State<QuizScreen> {
   var currentQuestionIndex = 0;
 
-  void answerQuestion() {
+  void answerQuestion(String option) {
+    widget.onSelectOption(option);
     setState(() {
       currentQuestionIndex += 1;
     });
@@ -45,7 +48,7 @@ class _QuizScreen extends State<QuizScreen> {
               return AnswerButton(
                   option: option,
                   onTap: () {
-                    answerQuestion();
+                    answerQuestion(option);
                   });
             })
           ],
