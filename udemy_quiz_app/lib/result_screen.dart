@@ -3,9 +3,10 @@ import 'package:udemy_quiz_app/model/questions.dart';
 import 'package:udemy_quiz_app/question_summary.dart';
 
 class ResultScreen extends StatelessWidget {
-  const ResultScreen({super.key, required this.selectedOptions});
+  const ResultScreen({super.key, required this.selectedOptions, required this.restartQuiz});
 
   final List<String> selectedOptions;
+  final void Function() restartQuiz;
 
   List<Map<String, Object>> getSummaryData() {
     final List<Map<String, Object>> summary = [];
@@ -24,20 +25,23 @@ class ResultScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final summaryData = getSummaryData();
+    final totalQuestions = questions.length;
+    final correctResponses = summaryData.where((element) => element['correctOption'] == element['selectedOption']).length;
     return Center(
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          const Text('You have score X out of Y!'),
+          Text('You have score $correctResponses out of $totalQuestions !', style: const TextStyle(color: Colors.white),),
           const SizedBox(
             height: 20,
           ),
-          QuestionSummary(questionSummaryData: getSummaryData()),
+          QuestionSummary(questionSummaryData: summaryData),
           const SizedBox(
             height: 20,
           ),
           OutlinedButton.icon(
-            onPressed: () {},
+            onPressed: restartQuiz,
             icon: const Icon(Icons.refresh),
             label: const Text('Restart Quiz'),
           ),
