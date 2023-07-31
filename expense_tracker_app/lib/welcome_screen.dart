@@ -11,6 +11,8 @@ class WelcomeScreen extends StatelessWidget {
       backgroundColor: const Color.fromARGB(255, 50, 52, 55),
       body: Center(
         child: Column(
+          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             const Text(
               'Expense Tracker',
